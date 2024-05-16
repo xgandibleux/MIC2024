@@ -1,0 +1,16 @@
+\scalebox{1} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(-0.5,-0.5)(10,6)
+
+\psaxes[labels=none,ticks=none]{<->}(0,0)(10,6)
+\rput(5,-0.5){Solution space}
+\rput{90}(-0.5,3){Objective function}
+\pscurve[showpoints=false]{-}(0.5,4)(2,5)(4,2.7)(6,3)(8,1)(10,3)
+\psdots[dotsize=6pt](6,3)(8,1)
+\rput[bl](6.5,3.5){Initial solution}
+\psline{->}(6.5,3.5)(6,3)
+\rput[t](8.5,0.5){Final solution}
+\psline{->}(8.5,0.5)(8,1)
+\end{pspicture} 
+}
+
