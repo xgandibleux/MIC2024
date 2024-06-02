@@ -450,20 +450,20 @@ JuMP itself is written purely in Julia. Solvers are the only binary dependencies
 %\texttt{ \hspace{-2mm}\green{julia>}  using JuMP, HiGHS}\\
 \texttt{ \hspace{-1.5mm}\green{julia>}  spp = Model(HiGHS.Optimizer)}\\
 \texttt{ \hspace{-2mm}\green{julia>}  @variable(spp, x[1:n], Bin)}\\
-\texttt{ \hspace{-2mm}\green{julia>}  @objective(spp, Max, sum(c[j]*x[j] for j=1:n))} \\
+\texttt{ \hspace{-2mm}\green{julia>}  @objective(spp, Max, sum(C[j]*x[j] for j=1:n))} \\
 \texttt{ \hspace{-2mm}\green{julia>}  @constraint(spp, cst[i=1:m], sum(A[i,j]*x[j] for j=1:n) $\le$ 1)}
 \end{tcolorbox} 
 
 \begin{tcolorbox}[arc=1ex, colback=black!20, colframe=black!20, left=3pt, right=3pt, top=3pt, bottom=2pt]
-\texttt{ \hspace{-1.5mm}\green{julia>}   print(model)}
+\texttt{ \hspace{-1.5mm}\green{julia>}   print(spp)}
 \end{tcolorbox} 
 
 \begin{tcolorbox}[arc=1ex, colback=black!20, colframe=black!20, left=3pt, right=3pt, top=3pt, bottom=2pt]
-\texttt{ \hspace{-1.5mm}\green{julia>}  optimize!(model)}
+\texttt{ \hspace{-1.5mm}\green{julia>}  optimize!(spp)}
 \end{tcolorbox} 
 
  \begin{tcolorbox}[arc=1ex, colback=black!20, colframe=black!20, left=3pt, right=3pt, top=3pt, bottom=2pt]
-  \texttt{ \hspace{-1.5mm}\green{julia>}   @show objective\_value(model)}\\   
+  \texttt{ \hspace{-1.5mm}\green{julia>}   @show objective\_value(spp)}\\   
     \texttt{ \hspace{-2mm}\green{julia>}  @show  value(x[2])}\\
     \texttt{ \hspace{-2mm}\green{julia>}  @show  value.(x)}    
     \end{tcolorbox} 
